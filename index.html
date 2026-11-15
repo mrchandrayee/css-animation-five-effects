@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>CSS Animation — Five Effects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>CSS Animation</h1>
+    <section class="animation-list" aria-label="Five CSS animation demonstrations">
+      <article class="animation-row">
+        <div class="preview"><button class="auto-button" type="button">Auto Button</button></div>
+        <div class="snippet">
+          <h2>1. Pulse Button (Loop)</h2>
+          <pre><code id="code1">@keyframes pulse {
+  50% { transform: scale(1.1); }
+}
+.auto-button {
+  animation: pulse 2s infinite;
+}</code></pre>
+          <button class="copy" data-copy="code1">Copy CSS</button>
+        </div>
+      </article>
+
+      <article class="animation-row">
+        <div class="preview"><div class="typing" aria-label="Typing loop animation"><span>Web Developer</span></div></div>
+        <div class="snippet">
+          <h2>2. Typing Loop Animation</h2>
+          <pre><code id="code2">.typing span {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: typing 3s steps(13) infinite;
+}
+@keyframes typing {
+  0%, 100% { width: 0; }
+  50%, 80% { width: 13ch; }
+}</code></pre>
+          <button class="copy" data-copy="code2">Copy CSS</button>
+        </div>
+      </article>
+
+      <article class="animation-row">
+        <div class="preview"><div class="spinner" role="img" aria-label="Rotating orange and white spinner"></div></div>
+        <div class="snippet">
+          <h2>3. Spinner Loader</h2>
+          <pre><code id="code3">.spinner {
+  border: 4px solid #fff;
+  border-top: 4px solid #ff6b00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre>
+          <button class="copy" data-copy="code3">Copy CSS</button>
+        </div>
+      </article>
+
+      <article class="animation-row">
+        <div class="preview"><div class="floating-card">Floating Card</div></div>
+        <div class="snippet">
+          <h2>4. Floating Card Loop</h2>
+          <pre><code id="code4">@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.floating-card {
+  animation: float 3s ease-in-out infinite;
+}</code></pre>
+          <button class="copy" data-copy="code4">Copy CSS</button>
+        </div>
+      </article>
+
+      <article class="animation-row">
+        <div class="preview"><div class="gradient-loop"></div></div>
+        <div class="snippet">
+          <h2>5. Gradient Loop</h2>
+          <pre><code id="code5">.gradient-loop {
+  background: linear-gradient(
+    90deg, #00c6ff, #ff4b2b, #7b61ff
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 6s infinite;
+}
+@keyframes gradientMove {
+  50% { background-position: 100% 50%; }
+}</code></pre>
+          <button class="copy" data-copy="code5">Copy CSS</button>
+        </div>
+      </article>
+    </section>
+    <p class="footer">Five looping CSS animations · Copy each animation's CSS</p>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

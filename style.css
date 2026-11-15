@@ -1,0 +1,29 @@
+*{box-sizing:border-box}
+:root{color-scheme:dark;--orange:#f36b22;--green:#23ef55;--panel:#1c1c1c;--black:#050505}
+body{margin:0;min-height:100vh;padding:24px 12px 32px;background:#000;color:#f4f4f4;font-family:Arial,Helvetica,sans-serif}
+.app{width:min(100%,760px);margin:0 auto}
+h1{margin:0 0 18px;text-align:center;color:#a9e45b;font-size:clamp(22px,5vw,30px);font-weight:700}
+.animation-list{border:3px solid var(--orange);padding:8px;background:#111;display:grid;gap:10px}
+.animation-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:10px;min-height:112px;padding:7px;border-radius:8px;background:#1c1c1c}
+.preview{min-width:0;min-height:98px;display:grid;place-items:center;overflow:hidden;border-radius:5px;background:#000}
+.snippet{min-width:0;padding:7px 8px;background:#1d1d1d}
+.snippet h2{margin:0 0 7px;color:#ff702b;font-size:12px;font-weight:700}
+pre{margin:0;padding:8px 9px;border-radius:7px;background:#000;color:var(--green);font:10px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.copy{margin-top:6px;padding:4px 8px;border:1px solid #24542c;border-radius:4px;background:#071009;color:#8df39c;font-size:9px;cursor:pointer}
+.copy:hover{border-color:#54e66b;color:#fff}
+.auto-button{min-width:75px;height:29px;padding:0 12px;border:1px solid #49200f;border-radius:5px;background:#171717;color:#ddd;font-size:9px;box-shadow:0 0 9px #f36b2233;animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.1)}}
+.typing{width:13ch;max-width:100%;overflow:hidden;color:#f3f3f3;font-size:clamp(12px,2.7vw,16px);font-weight:700;white-space:nowrap}
+.typing span{display:inline-block;overflow:hidden;width:0;border-right:2px solid #fff;white-space:nowrap;animation:typing 3s steps(13) infinite}
+@keyframes typing{0%,100%{width:0}50%,80%{width:13ch}}
+.spinner{width:38px;height:38px;border:4px solid #fff;border-top:4px solid #ff6b00;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.floating-card{width:105px;height:39px;display:grid;place-items:center;background:#242424;color:#eee;font-size:10px;box-shadow:0 6px 14px #0008;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.gradient-loop{width:min(82%,168px);height:43px;border-radius:7px;background:linear-gradient(90deg,#00c6ff,#ff4b2b,#7b61ff);background-size:200% 200%;animation:gradientMove 6s infinite}
+@keyframes gradientMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.footer{text-align:center;color:#777;font-size:10px;margin:13px 0 0}
+.toast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,12px);padding:8px 12px;border:1px solid #315c37;border-radius:6px;background:#0c1a0f;color:#caffd0;font-size:11px;opacity:0;pointer-events:none;transition:.2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:470px){body{padding:17px 8px}.animation-list{padding:5px;gap:7px}.animation-row{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:6px;padding:5px;min-height:105px}.preview{min-height:90px}.snippet{padding:6px 5px}.snippet h2{font-size:10px}pre{padding:6px;font-size:8px}.copy{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
